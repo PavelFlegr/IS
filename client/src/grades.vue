@@ -30,6 +30,7 @@
     import axios from "axios"
 
     const restructure = function (data) {
+        console.log(data);
         let result = {};
         result.subjects = [];
         let columns = 0;

@@ -5,7 +5,6 @@ import login from "./login.vue"
 import grades from "./grades.vue"
 import axios from "axios"
 
-console.log(login);
 const app = new Vue({
     el: "main",
     data: {
