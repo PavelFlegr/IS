@@ -30,7 +30,8 @@
                     withCredentials: true
                 })
                 .then(function(res) {
-                    app.currentView = "grades"
+                    console.log(res);
+                    //app.currentView = "grades"
                 });
             }
         }
