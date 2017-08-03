@@ -1,5 +1,5 @@
 <template>
-    <form>
+    <form @keypress.enter="login">
         <div>
             <div>přihlašovací jméno</div>
             <input type="text" v-model="username"/>
@@ -9,12 +9,13 @@
             <input type="password" v-model="password" />
         </div>
         <br />
-        <button type="button" v-on:click="login">login</button>
+        <button type="button" @click="login">login</button>
     </form>
 </template>
 
 <script>
-    module.exports = {
+    import axios from "axios"
+    export default {
         data: function() {
             return {
                 username: "",
@@ -23,6 +24,7 @@
         },
         methods: {
             login: function () {
+                const that = this;
                 axios.post("login", {
                     username: this.username,
                     password: this.password
@@ -30,8 +32,9 @@
                     withCredentials: true
                 })
                 .then(function(res) {
-                    console.log(res);
-                    //app.currentView = "grades"
+                    if(res.data.success) {
+                        that.$parent.view = "grades";
+                    }
                 });
             }
         }
