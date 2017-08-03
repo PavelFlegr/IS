@@ -36,7 +36,6 @@
         data.DATA.pop();
         for (const subject of data.DATA) {
             columns = Math.max(columns, subject.COUNT);
-            console.log(columns);
             let newSubject = {};
             newSubject.name = subject.SUBJECT;
             newSubject.average = subject.AVERAGE;
