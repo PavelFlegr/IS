@@ -7,7 +7,7 @@ const cookieParser = require("cookie-parser");
 const axiosCookieJarSupport = require('@3846masa/axios-cookiejar-support');
 const tough = require('tough-cookie');
 const serveStatic = require("serve-static");
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 1337;
 axiosCookieJarSupport(axios);
 
 const app = express();
