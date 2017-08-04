@@ -73,6 +73,6 @@ const grades = async function (req, res) {
 app.get("/status", status);
 app.post("/login$", login);
 app.get("/grades", grades);
-app.use("/", serveStatic(__dirname + "/client/dist"/*, { maxAge: "1d" }*/));
+app.use("/", serveStatic(__dirname + "/client/dist", { maxAge: "1d" }));
 
 app.listen(port);
